@@ -28,7 +28,7 @@ For this project we trained 3 models:
 </p>
 Calibrated Classifier performed well as compared to other two classifiers. For final model, Calibrated Classifier was trained.
 
-## Flask Web
+## Flask App
 For deployment of the website we have created an HTML website with <img alt="Flask" src="https://img.shields.io/badge/flask%20-%23000.svg?&style=for-the-badge&logo=flask&logoColor=white"/>. The model works in real time, which means for every typed letter it will make prediction for the sentiment of the whole sentence. 
 
 
