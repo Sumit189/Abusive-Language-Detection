@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 import joblib
+import numpy
 import sklearn
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.calibration import CalibratedClassifierCV
@@ -10,21 +11,14 @@ import spacy
 import re
 from spacy.matcher import PhraseMatcher
 nlp = spacy.load("en_core_web_sm")
-file1 = open('static/bad_words.txt')
-file1.seek(0, 0)
-bad_list = []
-for bw in file1.readlines():
-  bad_list.append(bw.rstrip('\n'))
 
-bad_words_patterns = [nlp(text) for text in bad_list]
+bad_words = np.load("trained_model/bad_words.npy", allow_pickle=True).tolist()
+bad_words_patterns = [nlp(text) for text in bad_words]
 matcher = PhraseMatcher(nlp.vocab)
 matcher.add('BAD_WORDS', None, *bad_words_patterns)
 
-
 model = joblib.load("trained_model/bestmodel.joblib")
 vectorizer = joblib.load("trained_model/vectorizer.joblib")
-
-
 label = ["Neutral", "Abusive"]
 
 app = Flask(__name__)
