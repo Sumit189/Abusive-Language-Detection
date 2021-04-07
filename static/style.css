@@ -32,7 +32,7 @@ body{
 }
 
 .form form textarea {
-  color: #8f8fd6;
+  color: #000;
   width: 100%;
   height: 200px;
   outline: none;
@@ -44,15 +44,15 @@ body{
   outline: none;
 }
 .form form input::-moz-placeholder {
-  color: #8f8fd6;
+  color: #000;
   font-weight: 100;
 }
 .form form input:-ms-input-placeholder {
-  color: #8f8fd6;
+  color: #000;
   font-weight: 100;
 }
 .form form input::placeholder {
-  color: #8f8fd6;
+  color: #000;
   font-weight: 100;
 }
 
