@@ -4,33 +4,32 @@
     <meta charset="UTF-8">
     <title>Abusive Language Detection</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,900' rel='stylesheet' type='text/css'><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="static/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="static/favicon.png" type="image/png" sizes="16x16">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 </head>
 <body>
-
-<div class="back"></div>
-<div class="registration-form">
+<div class="form">
   <header>
     <h1>Enter Text</h1>
-    <p></p>
   </header>
   <form>
     <div class="input-section">
       <textarea  type="text" placeholder="Enter Text..." autocomplete="off" id="user_input"></textarea>
     </div>
   </form>
-  <center><img id="expression" src="Neutral.svg" style="height: 150px; width: 150px; visibility: hidden;"></center>
-  <center><p style="visibility: hidden; color:whitesmoke" id="tone">Tone</p></center>
-  <center><p style="visibility: hidden; color: whitesmoke" id="score">Accuracy</p></center>
+    <div class="fab round" id="fab1" onclick="censor_text()" title="Censor Text"><b class="material-icons" id="fabIcon">&#129323;</b></div>
+  <center><img id="expression" src="static/Neutral.svg" style="height: 150px; width: 150px; visibility: hidden;"></center>
+  <center><p style="visibility: hidden; color:black; font-size: 26px" id="tone">Tone</p></center>
+  <center><p style="visibility: hidden; color: black; font-size: 26px" id="score">Accuracy</p></center>
 </div>
-
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="./script.js"></script>
-
 </body>
 <script>
+
 $("#user_input").keyup(function(){
     var text = $(this).val();
     if(text.length == 0){
@@ -67,7 +66,23 @@ function test(res){
     document.getElementById("tone").innerText = res[0];
     res[1] =  parseFloat(res[1]).toFixed(2);
     document.getElementById("score").innerText = res[1] + "%";
-
 }
+
+function censor_text(){
+    text = document.getElementById("user_input").value;
+    $.ajax({
+        url:'/censor',
+        type:'get',
+        data:{
+          data:text
+        },
+        success:function(response)
+        {
+          document.getElementById("user_input").value = response;
+          $('#user_input').keyup();
+        }
+      });
+}
+
 </script>
 </html>
