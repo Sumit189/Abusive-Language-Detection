@@ -5,7 +5,7 @@
 ![Made with HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![Uses CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-[![deployed](https://heroku-badges.herokuapp.com/?app=abusive-language-detect)](https://abusive-language-detect.herokuapp.com/)
+[![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)]
 
 ## Web App
 Web App is accessible through this link: [Abusive Language Detection](https://abusive-language-detect.herokuapp.com/)
