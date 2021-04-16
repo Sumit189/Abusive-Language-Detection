@@ -4,14 +4,14 @@ body::-webkit-scrollbar {
 
 
 .cta{
-  background: red;
+  background: #d0d1de;
 }
 
 .form {
   font-family: "Roboto";
   width: 50vw;
-  margin: -50% auto;
-  background: blue;
+  margin: -40% auto;
+  background: transparent;
 }
 
 .form header {
