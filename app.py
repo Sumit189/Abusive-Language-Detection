@@ -17,9 +17,9 @@ bad_words_patterns = [nlp(text) for text in bad_words]
 matcher = PhraseMatcher(nlp.vocab)
 matcher.add('BAD_WORDS', None, *bad_words_patterns)
 
-model = joblib.load("trained_model/bestmodel.joblib")
-vectorizer = joblib.load("trained_model/vectorizer.joblib")
-label = ["Neutral", "Abusive"]
+model = joblib.load("trained_model/model-V2.joblib")
+vectorizer = joblib.load("trained_model/vectorizer-V2.joblib")
+label = ["Non Abusive", "Abusive"]
 
 app = Flask(__name__)
 
