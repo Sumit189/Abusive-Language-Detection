@@ -3,7 +3,6 @@ body::-webkit-scrollbar {
 }
 
 
-
 .cta{
   background: #d0d1de;
 }
@@ -11,7 +10,6 @@ body::-webkit-scrollbar {
 .form {
   font-family: "Roboto";
   width: 50vw;
-  margin: -10% auto;
   background: transparent;
 }
 
