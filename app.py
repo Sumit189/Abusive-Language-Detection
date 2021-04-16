@@ -4,7 +4,7 @@ import numpy
 import sklearn
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.calibration import CalibratedClassifierCV
-from sklearn.svm import LinearSVC
+
 import numpy as np
 
 import spacy
@@ -25,7 +25,6 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    print("Here")
     return render_template('index.html')
 
 @app.route('/prediction')
@@ -53,6 +52,9 @@ def censor():
         text = re.sub(span.text, censor_, text)
     return render_template('censor.html', censor_=text)
 
+@app.route('/Privacy-Policy', methods=['GET', 'POST'])
+def pp():
+    return render_template('Privacy Policy.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
