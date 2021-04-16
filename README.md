@@ -15,7 +15,7 @@ Web App is accessible through this link: [Abusive Language Detection](https://ab
   <img width="460" height="300" src="https://github.com/Sumit189/Abusive-Language-Detection/blob/main/images_for_readme/wordcloud.png">
 </p>
 
-This project is made for the detection of the Abusive Language from text provided by users. The  model is trained with latest Sklearn Version 0.24.1 on the [Abusive/Non Abusive dataset.](https://github.com/vzhou842/profanity-check/blob/master/profanity_check/data/clean_data.csv)
+This project is made for the detection of the Abusive Language from text provided by users. The  model is trained with latest Sklearn Version 0.24.1 on the Abusive/Non Abusive dataset made by the combination of various publicly available datasets.
 ### Classifiers
 For this project we trained 3 models: 
   1. Random Forest
@@ -23,7 +23,7 @@ For this project we trained 3 models:
   3. Decision Tree
 
 <p align="center">
-  <img width="460" height="300" src="https://github.com/Sumit189/Abusive-Language-Detection/blob/main/images_for_readme/Accuracy.PNG">
+  <img width="460" height="300" src="https://github.com/Sumit189/Abusive-Language-Detection/blob/main/images_for_readme/accuracy.png">
 </p>
 Calibrated Classifier performed well as compared to other two classifiers. For final model, Calibrated Classifier was trained.
 
