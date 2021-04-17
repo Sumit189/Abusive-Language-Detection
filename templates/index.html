@@ -17,7 +17,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 </head>
 
-<body id="page-top">
+<body id="page-top" onload="set_default()">
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav" style="background: rgba(61,58,58,0.48);">
     <div class="container-fluid"  style="cursor: pointer"><a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size: 19px;color: var(--light);font-style: normal;font-weight: bold;">Abusive Language Detection</a><button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler float-right" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars" style="background: rgba(255,255,255,0);color: var(--light);"></i></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -73,9 +73,9 @@
                   </div>
                 </form>
                   <div class="fab round" id="fab1" onclick="censor_text()" title="Censor Text"><b class="material-icons" id="fabIcon">&#129323;</b></div>
-                <center><img id="expression" src="static/Neutral.svg" style="height: 150px; width: 150px; visibility: visible;"></center>
-                <center><p style="visibility: visible; color:black; font-size: 26px" id="tone">Tone</p></center>
-                <center><p style="visibility: visible; color: black ; font-size: 26px" id="score">Accuracy</p></center>
+                <center><img id="expression" src="static/Neutral.svg" style="height: 150px; width: 150px; visibility: hidden;"></center>
+                <center><p style="visibility: hidden; color:black; font-size: 26px" id="tone">Tone</p></center>
+                <center><p style="visibility: hidden; color: black ; font-size: 26px" id="score">Accuracy</p></center>
               </div>
     </section>
     <footer class="py-5 bg-black">
@@ -90,6 +90,11 @@
 </body>
 <script>
     var is_abusive = 0;
+    
+    function set_default(){
+        is_abusive = 0;
+    }
+    
     $("#user_input").keyup(function(){
         var text = $(this).val();
         if(text.replace(/\s/g,"") == ""){
