@@ -28,7 +28,7 @@ For this project we trained 3 models:
 Calibrated Classifier performed well as compared to other two classifiers. For final model, Calibrated Classifier was trained.
 
 ### Censor Abusive Words
-To censor abusive words we have used the Spacy PhraseMatcher which matches words of user input to the [bad_words.txt](https://github.com/Sumit189/Abusive-Language-Detection/blob/main/notebook/data/bad_words.text) and replace the matched words with asterisk(*).
+To censor abusive words we have used the Spacy PhraseMatcher which matches words of user input to the [bad_words.txt](https://github.com/Sumit189/Abusive-Language-Detection/blob/main/notebook/data/bad_words.txt) and replace the matched words with asterisk(*).
 
 ## Flask App
 For deployment of the website we have created an HTML website with <img alt="Flask" src="https://img.shields.io/badge/flask%20-%23000.svg?&style=for-the-badge&logo=flask&logoColor=white"/>. The model works in real time, which means for every typed letter it will make prediction for the sentiment of the whole sentence. 
