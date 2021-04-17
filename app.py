@@ -42,15 +42,14 @@ def prediction():
 @app.route("/censor", methods=["POST", "GET"])
 def censor():
     data = request.args.get("data")
-    data = data.lower()
-    doc = nlp(data)
+    doc = nlp(data.lower())
     matches = matcher(doc)
     text = data
     for match_id, start, end in matches:
         span = doc[start: end]
         len_of_word = len(span.text)
         censor_ = "*" * len_of_word
-        text = re.sub(span.text, censor_, text)
+        text = re.sub(span.text, censor_, text.lower())
     return render_template('censor.html', censor_=text)
 
 @app.route('/Privacy-Policy', methods=['GET', 'POST'])
