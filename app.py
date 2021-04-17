@@ -42,6 +42,7 @@ def prediction():
 @app.route("/censor", methods=["POST", "GET"])
 def censor():
     data = request.args.get("data")
+    data = data.lower()
     doc = nlp(data)
     matches = matcher(doc)
     text = data
