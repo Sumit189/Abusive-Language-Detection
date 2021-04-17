@@ -15,7 +15,7 @@ Web App is accessible through this link: [Abusive Language Detection](https://ab
   <img width="460" height="300" src="https://github.com/Sumit189/Abusive-Language-Detection/blob/main/images_for_readme/wordcloud.png">
 </p>
 
-This project is made for the detection of the Abusive Language from text provided by users. The  model is trained with latest Sklearn Version 0.24.1 on the Abusive/Non Abusive dataset made by the combination of various publicly available datasets.
+This project is made for the detection of the Abusive Language from text provided by users. The  model is trained with latest Sklearn Version 0.24.1 on the [Abusive/Non Abusive dataset](https://github.com/Sumit189/Abusive-Language-Detection/blob/main/notebook/data/cleaned_abusive_nonabusive2.csv) made by the combination of various publicly available datasets.
 ### Classifiers
 For this project we trained 3 models: 
   1. Random Forest
